@@ -29,3 +29,11 @@ jobs:
           EverPhotoPassword: ${{secrets.EVER_PHOTO_PASSWORD}}
           EverPhotoToken: ${{secrets.EVER_PHOTO_TOKEN}}
           ServerChanKey: ${{secrets.SERVER_CHAN_KEY}}
+
+      - name: Run1
+        run: go run main.go
+        env:
+          EverPhotoMobile1: ${{secrets.EVER_PHOTO_MOBILE1}}
+          EverPhotoPassword1: ${{secrets.EVER_PHOTO_PASSWORD1}}
+          EverPhotoToken1: ${{secrets.EVER_PHOTO_TOKEN1}}
+          ServerChanKey1: ${{secrets.SERVER_CHAN_KEY1}}
