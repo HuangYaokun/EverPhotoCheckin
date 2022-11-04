@@ -6,29 +6,29 @@ on:
   schedule:
     - cron: '0 0 * * *' # 北京时间每天8点0分
 
-jobs:
-  checkin:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set time zone
-        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+# jobs:
+#   checkin:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Set time zone
+#         run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
-      - name: Setup go
-        uses: actions/setup-go@v2
+#       - name: Setup go
+#         uses: actions/setup-go@v2
 
-      - name: Checkout code
-        uses: actions/checkout@v2
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: go mod download
+#       - name: Install dependencies
+#         run: go mod download
 
-      - name: Run
-        run: go run main.go
-        env:
-          EverPhotoMobile: ${{secrets.EVER_PHOTO_MOBILE}}
-          EverPhotoPassword: ${{secrets.EVER_PHOTO_PASSWORD}}
-          EverPhotoToken: ${{secrets.EVER_PHOTO_TOKEN}}
-          ServerChanKey: ${{secrets.SERVER_CHAN_KEY}}
+#       - name: Run
+#         run: go run main.go
+#         env:
+#           EverPhotoMobile: ${{secrets.EVER_PHOTO_MOBILE}}
+#           EverPhotoPassword: ${{secrets.EVER_PHOTO_PASSWORD}}
+#           EverPhotoToken: ${{secrets.EVER_PHOTO_TOKEN}}
+#           ServerChanKey: ${{secrets.SERVER_CHAN_KEY}}
           
           
   checkin1:
@@ -46,12 +46,12 @@ jobs:
       - name: Install dependencies
         run: go mod download
 
-      - name: Run1
+      - name: Run
         run: go run main.go
         env:
-          EverPhotoMobile1: ${{secrets.EVER_PHOTO_MOBILE1}}
-          EverPhotoPassword1: ${{secrets.EVER_PHOTO_PASSWORD1}}
-          EverPhotoToken1: ${{secrets.EVER_PHOTO_TOKEN1}}
-          ServerChanKey1: ${{secrets.SERVER_CHAN_KEY1}}
+          EverPhotoMobile: ${{secrets.EVER_PHOTO_MOBILE1}}
+          EverPhotoPassword: ${{secrets.EVER_PHOTO_PASSWORD1}}
+          EverPhotoToken: ${{secrets.EVER_PHOTO_TOKEN1}}
+          ServerChanKey: ${{secrets.SERVER_CHAN_KEY1}}
 
  
