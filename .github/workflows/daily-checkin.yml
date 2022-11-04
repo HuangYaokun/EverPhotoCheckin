@@ -6,7 +6,7 @@ on:
 #   schedule:
 #     - cron: '0 0 * * *' # 北京时间每天8点0分
 
-# jobs:
+jobs:
 #   checkin:
 #     runs-on: ubuntu-latest
 #     steps:
