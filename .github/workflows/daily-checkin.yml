@@ -2,9 +2,9 @@ name: Daily-Checkin
 on:
   push:
     branches: [ main ]
-#   workflow_dispatch:
-#   schedule:
-#     - cron: '0 0 * * *' # 北京时间每天8点0分
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # 北京时间每天8点0分
 
 jobs:
   checkin:
