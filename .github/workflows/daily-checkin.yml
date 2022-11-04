@@ -29,6 +29,22 @@ jobs:
           EverPhotoPassword: ${{secrets.EVER_PHOTO_PASSWORD}}
           EverPhotoToken: ${{secrets.EVER_PHOTO_TOKEN}}
           ServerChanKey: ${{secrets.SERVER_CHAN_KEY}}
+          
+          
+  checkin1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set time zone
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      - name: Setup go
+        uses: actions/setup-go@v2
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: go mod download
 
       - name: Run1
         run: go run main.go
@@ -37,3 +53,5 @@ jobs:
           EverPhotoPassword1: ${{secrets.EVER_PHOTO_PASSWORD1}}
           EverPhotoToken1: ${{secrets.EVER_PHOTO_TOKEN1}}
           ServerChanKey1: ${{secrets.SERVER_CHAN_KEY1}}
+
+ 
